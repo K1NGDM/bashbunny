@@ -6,13 +6,13 @@
 
 These are payloads that I have created for fun with the Hak5 bashbunny.
 
-Use them at your own discression and abide by all of your local and federal laws.
+Use them at your own discretion and abide by all of your local and federal laws.
 
-And have fun!
+Have fun!
 
 ## Requirements
 
-n/a
+Bash Bunny can be found at https://shop.hak5.org/products/bash-bunny
 
 ## STATUS
 
